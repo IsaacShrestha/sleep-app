@@ -1,7 +1,9 @@
 @import "bootstrap";
 
 body{
-	background-color: #eee;
+	background: url(../images/night.jpg);
+	background-size: 100%;
+	background-color: #273343;
 	font-family: Verdana;
 	margin:0;
 	padding:0;
@@ -11,4 +13,8 @@ body{
 .footer{
 	position: absolute;
 	bottom: 0;
+	min-height: 35px;
+	min-width: 100%;
+	background-color: #eee;
+	padding: 5px;
 }
