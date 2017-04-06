@@ -1,0 +1,49 @@
+<div class="row justify-content-md-center alarm">
+	<div class="col-md-4 col-sm-4 col-xs-4"></div>
+	<div class="col-md-4 col-sm-4 col-xs-4">
+		<h3>Set Alarms</h3>
+	</div>
+	<div class="col-md-4 col-sm-4 col-xs-4"></div>
+</div>
+<div class="row">
+	<div class="col-md-4 col-sm-4 col-xs-4">
+		{{#x-select class="form-control reg-input-field" action="selectHour" as |xs|}}
+			{{#xs.option value=1}} 1 {{/xs.option}}
+			{{#xs.option value=2}} 2 {{/xs.option}}
+			{{#xs.option value=3}} 3 {{/xs.option}}
+			{{#xs.option value=4}} 4 {{/xs.option}}
+			{{#xs.option value=5}} 5 {{/xs.option}}
+			{{#xs.option value=6}} 6 {{/xs.option}}
+			{{#xs.option value=7}} 7 {{/xs.option}}
+			{{#xs.option value=8}} 8 {{/xs.option}}
+			{{#xs.option value=9}} 9 {{/xs.option}}
+			{{#xs.option value=10}} 10 {{/xs.option}}
+			{{#xs.option value=11}} 11 {{/xs.option}}
+			{{#xs.option value=12}} 12 {{/xs.option}}
+		{{/x-select}}
+	</div>
+	<div class="col-md-4 col-sm-4 col-xs-4">
+		{{#x-select class="form-control reg-input-field" action="selectMin" as |xs|}}
+			{{#xs.option value=1}} 1 {{/xs.option}}
+			{{#xs.option value=2}} 2 {{/xs.option}}
+			{{#xs.option value=3}} 3 {{/xs.option}}
+			{{#xs.option value=4}} 4 {{/xs.option}}
+		{{/x-select}}
+	</div>
+	<div class="col-md-4 col-sm-4 col-xs-4">
+		{{#x-select class="form-control reg-input-field" action="selectDaytime" as |xs|}}
+			{{#xs.option value=1}} AM {{/xs.option}}
+			{{#xs.option value=2}} PM {{/xs.option}}
+			
+		{{/x-select}}
+	</div>
+</div>
+<div>&nbsp;</div>
+<div class="row">
+	<div class="col-md-4 col-sm-4 col-xs-4"></div>
+	<div class="col-md-4 col-sm-4 col-xs-4">
+		<button class="btn btn-success btn-block">Turn On</button>
+	</div>
+	<div class="col-md-4 col-sm-4 col-xs-4"></div>
+	
+</div>
