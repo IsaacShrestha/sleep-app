@@ -21,13 +21,13 @@ export default Ember.Controller.extend({
   },
  
   chartData: [{
-    name: 'John',
-    data: [6,7,8,8,5,4,10]
-  }, /*{
-  	//we can use factors to measure sleep quality here instead of just hours slept
     name: 'Hours',
-    data: [5, 7, 3]
-  },{
+    data: [6,7,8,8,5,4,10]
+  }, {
+  	//we can use factors to measure sleep quality here instead of just hours slept
+    name: 'Quality',
+    data: [5, 7, 3, 10, 11, 10, 8]
+  },/*{
 	name: 'Quality',
 	data: [7, 8, 5]
   }*/

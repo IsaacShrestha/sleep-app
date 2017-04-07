@@ -42,8 +42,11 @@
     "ember-source": "~2.12.0",
     "ember-welcome-page": "^2.0.2",
     "emberx-select": "^3.0.1",
+    "express": "^4.15.2",
+    "glob": "^4.5.3",
     "highcharts": "^5.0.9",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.2.3",
+    "morgan": "^1.8.1"
   },
   "engines": {
     "node": ">= 4"
