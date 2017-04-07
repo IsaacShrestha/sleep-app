@@ -7,10 +7,10 @@ export default Ember.Component.extend({
 	setDaytime: null,
 	alarmTime: null,
 
+
 	actions: {
-		selectHour(hours){
-			this.set('setHours', hours);
-			console.log(setHours);
+		selectHour(value){
+			this.set('setHours', value);
 		},
 
 		selectMin(mins){
@@ -21,6 +21,22 @@ export default Ember.Component.extend({
 			this.set('setDaytime', daytime);
 		}
 	},
+
+
+	alarmTitle: Ember.computed(function(){
+		var url= window.location.pathname;
+		var alarmType= url.substring(url.lastIndexOf('/')+1);
+		console.log(alarmType);
+		return alarmType;
+	}),
+
+	alarmTime: Ember.computed(function(){
+		var hour = this.get('setHours');
+		var min = this.get('setMins');
+		var dayTime = this.get('setDaytime');
+		return hour;
+	}),
+	    
 
 	/*alarmTime: Ember.computed(setHours, setMins, setDaytime, function(){
 		alarmAt = this.get(setHours) + ":" + this.get(setMins) + ":" + this.get("setDaytime");

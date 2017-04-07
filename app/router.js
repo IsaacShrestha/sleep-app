@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('mainpage', {path: '/'});
   this.route('alarms');
+  this.route('editalarms', {path: ':name'});
 });
 
 export default Router;

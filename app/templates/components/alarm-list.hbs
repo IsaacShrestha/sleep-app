@@ -1,8 +1,55 @@
 
-<div style="color:#fff;">
+{{!-- <div style="color:#fff;">
+	this is from data model
 	{{#each model as |alarm|}}
-		Wake up time: {{alarm.wakeuptime}}
-		Bedtime: {{alarm.bedtime}}
-		BLuelight: {{alarm.bluelight}}
+		Wake up time: {{alarm.wakeuptime}}<br/>
+		Bedtime: {{alarm.bedtime}}<br/>
+		BLuelight: {{alarm.bluelight}}<br/>
 	{{/each}}
+
+</div> --}}
+
+<div class="row">
+	
+</div>
+<p style="min-height:2px;"></p>
+
+<div class="row alarmlist">
+	
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+			<h3>6: 00 <span>A.M.</span></h3>
+			<p>Wakeup Alarm</p>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			{{#if wakeupalarm}}
+				<button class="btn btn-success alarmbtn" {{action "offWakeAlarm"}}>ON</button>
+			{{else}}
+				
+				<button class="btn btn-danger alarmbtn" {{action "onWakeAlarm"}}>OFF</button>
+			{{/if}}
+
+			<button class="btn btn-primary alarmbtn" {{action 'editWakeup'}} > Edit </button>
+			
+		</div>
+
+
+
+</div>
+<p style="min-height:2px;"></p>
+
+<div class="row alarmlist">
+	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+			<h3>9: 00 <span>P.M.</span></h3>
+			<p>Bedtime Reminder</p>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		{{#if bedtimereminder}}
+			<button class="btn btn-success alarmbtn" {{action "offBedAlarm"}}>ON</button>
+		{{else}}
+			
+			<button class="btn btn-danger alarmbtn" {{action "onBedAlarm"}}>OFF</button>
+		{{/if}}
+		
+		<button class="btn btn-primary alarmbtn" {{action 'editBedtime'}} > Edit </button>
+	</div>
 </div>
