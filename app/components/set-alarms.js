@@ -2,53 +2,39 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	//alarmTime: null,
-	setHours: null,
-	setMins: null,
-	setDaytime: null,
+	router: Ember.inject.service('-routing'),
+	hours: null,
+	minutes: null,
+	selectedDayTime: null,
 	alarmTime: null,
-
 
 	actions: {
 		selectHour(value){
-			this.set('setHours', value);
+			this.set('hours', value);
 		},
 
-		selectMin(mins){
-			this.set('setMins', mins);
+		minutes(value) {
+			this.set('minutes', value);
+
 		},
 
-		selectDaytime(daytime){
-			this.set('setDaytime', daytime);
+		dayTime(value){
+			this.set('selectedDayTime', value);
+		},
+
+		setAlarm(){
+			var alarm = this.get('hours')+ " : " + this.get('minutes') + "  " + this.get('selectedDayTime');
+			this.set('alarmTime', alarm ); 
+			this.get('router').transitionTo('alarms');
 		}
+
+	
 	},
 
 
 	alarmTitle: Ember.computed(function(){
 		var url= window.location.pathname;
 		var alarmType= url.substring(url.lastIndexOf('/')+1);
-		console.log(alarmType);
 		return alarmType;
 	}),
-
-	alarmTime: Ember.computed(function(){
-		var hour = this.get('setHours');
-		var min = this.get('setMins');
-		var dayTime = this.get('setDaytime');
-		return hour;
-	}),
-	    
-
-	/*alarmTime: Ember.computed(setHours, setMins, setDaytime, function(){
-		alarmAt = this.get(setHours) + ":" + this.get(setMins) + ":" + this.get("setDaytime");
-		console.log("HERE = "+ alarmTime);
-		return 20;
-
-
-	}),*/
-
-
-
-
-
-
 });
