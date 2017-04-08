@@ -15,6 +15,7 @@
 			<div class="col-md-4 col-xs-4">
 				{{#x-select class="selectbox form-control reg-input-field" action="selectHour" as |xs|}}
 					<option disabled=true selected=true>Hour</option>
+					{{#xs.option value=0}} 0 {{/xs.option}}
 					{{#xs.option value=1}} 1 {{/xs.option}}
 					{{#xs.option value=2}} 2 {{/xs.option}}
 					{{#xs.option value=3}} 3 {{/xs.option}}
@@ -35,6 +36,7 @@
 			<div class="col-md-4 col-xs-4">
 				{{#x-select class="selectbox form-control reg-input-field" action="minutes" as |xs|}}
 					<option disabled=true selected=true>Minute</option>
+					{{#xs.option value=0}} 0 {{/xs.option}}
 					{{#xs.option value=1}} 1 {{/xs.option}}
 					{{#xs.option value=2}} 2 {{/xs.option}}
 					{{#xs.option value=3}} 3 {{/xs.option}}
