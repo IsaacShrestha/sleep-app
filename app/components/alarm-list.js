@@ -66,7 +66,7 @@ export default Ember.Component.extend({
 		setAlarm(){
 			var alarm = this.get('hours')+ " : " + this.get('minutes') + "  " + this.get('selectedDayTime');
 			this.set('displayAlarmTime', true ); 
-			this.set('wakeupalarm', true);
+			//this.set('wakeupalarm', true);
 			this.set('alarmTime', alarm ); 
 			this.set('alarm', true);
 			//this.get('router').transitionTo('alarms'); displayAlarmTime
@@ -74,7 +74,7 @@ export default Ember.Component.extend({
 
 		setReminder(){
 			var alarm = this.get('hours')+ " : " + this.get('minutes') + "  " + this.get('selectedDayTime');
-			this.set('bedtimereminder', true);
+			//this.set('bedtimereminder', true);
 			this.set('displayAlarmTime', true ); 
 			this.set('alarmTime', alarm ); 
 			this.set('reminder', true);
@@ -111,11 +111,10 @@ export default Ember.Component.extend({
 		
 	}),
 
-	wakeupAlarm: Ember.computed('hours', 'minutes', 'selectedDayTime', function(){
+	wakingAlarm: Ember.computed('hours', 'minutes', 'selectedDayTime', function(){
 		var h = parseInt(this.get('hours'));
 		var m = parseInt(this.get('minutes'));
 		var dayTime = this.get('selectedDayTime');
-		var b = null;
 		var reqdayTime = null;
 		//var t = h + m/60;
 		var reqTime = h + 9;
