@@ -1,0 +1,143 @@
+{{result}}
+
+{{playSound}}
+{{#if playGame}}
+	<div class="row">
+			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+				<h3 class="center">Answer following to turn alarm off!</h3>
+			</div>
+			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+		
+	</div>
+
+	<div class="clean"></div>
+	<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<label>{{first}} + {{second}} = </label>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				{{input class="form-control" type="text" value=inputSum placeholder="Your answer"}}
+				
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				{{#if addError}}
+					<span class="glyphicon glyphicon-remove" style="color:#ff0000;"></span>
+				{{else}}
+					<span class="glyphicon glyphicon-ok" style="color:#00ff00;"></span>
+				{{/if}}
+			</div>
+			
+		
+	</div>
+
+	<div class="clean"></div>
+
+	<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<label>{{third}} * {{fifth}} = </label>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				{{input class="form-control" type="text" value=inputMul placeholder="Your answer"}}
+				
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				{{#if mulError}}
+					<span class="glyphicon glyphicon-remove" style="color:#ff0000;"></span>
+				{{else}}
+					<span class="glyphicon glyphicon-ok" style="color:#00ff00;"></span>
+				{{/if}}
+			</div>
+			
+		
+	</div>
+
+	<div class="clean"></div>
+
+	<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<label>{{sixth}} - {{seventh}} = </label>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				{{input class="form-control" type="text" value=inputSub placeholder="Your answer"}}
+				
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				{{#if subError}}
+					<span class="glyphicon glyphicon-remove" style="color:#ff0000;"></span>
+				{{else}}
+					<span class="glyphicon glyphicon-ok" style="color:#00ff00;"></span>
+				{{/if}}
+			</div>
+			
+		
+	</div>
+	<div class="clean"></div>
+	<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				{{#if reDirect}}
+					<button class="btn btn-success btn-block" {{action 'turnAlarmOff'}}>DONE</button>
+				{{else}}
+					<button class="btn btn-success btn-block" disabled="disabled">DONE</button>
+				{{/if}}
+				
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				
+			</div>
+			
+		
+	</div>
+
+{{else}}
+	<div class="row clean">&nbsp; </div>
+	<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<p class="clockface">{{hourDisplay}}</p>
+			
+		</div>
+		<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">&nbsp;</div>
+		<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span class="clockface"> : </span></div>
+		
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<p class="clockface">{{minutesDisplay}}</p>
+		</div>
+		<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">&nbsp;</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">&nbsp;</div>
+		
+	</div>
+	<div class="row clean"></div>
+	<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<p style="color:#00ff00; font-size: 22px; text-align:center;">Alarm </p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+		
+	</div>
+
+	{{!-- <div class="row">
+		<center>
+			<h4>SNOOZE</h4>
+		</center>
+	</div> --}}
+
+
+
+	<div class="row clean"></div>
+
+	<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<button class="btn btn-danger btn-block" {{action 'turnOff'}} >TURN OFF</button>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+		
+	</div>
+{{/if}}
+
+

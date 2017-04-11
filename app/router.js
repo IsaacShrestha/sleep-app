@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('mainpage', {path: '/'});
   this.route('alarms');
   this.route('editalarms', {path: ':name'});
+  this.route('playalarmsounds');
 });
 
 export default Router;

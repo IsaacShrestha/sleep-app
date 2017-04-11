@@ -4,12 +4,38 @@ body{
 	background: url(../images/night.jpg);
 	background-size: 100%;
 	background-color: #273343;
-	font-family: Verdana;
+	font-family: Times New Roman;
 	margin:0;
 	padding:0;
 	min-height: 100%;
+	color:#fff;
 }
 
+.clockface{
+	min-height: 100px;
+	font-size: 100px;
+}
+
+.center{
+	text-align:center;
+}
+
+.clean{
+	margin:50px;
+	clear: both;
+}
+
+label{
+	font-size: 22px;
+	margin-left: 40px;
+}
+
+input{
+	margin-right: 20px;
+	padding: 5px;
+	color: #eee;
+	float:left;
+}
 
 .footer{
 	position: absolute;
