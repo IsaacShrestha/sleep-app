@@ -11,6 +11,12 @@ body{
 	color:#fff;
 }
 
+.wrapper{
+	min-height: 100%;
+	padding: 0 0 100px;
+	position: relative;
+}
+
 .clockface{
 	min-height: 100px;
 	font-size: 100px;
@@ -49,7 +55,7 @@ input{
 	float:left;
 }
 
-.footer{
+footer{
 	position: absolute;
 	bottom: 0;
 	min-height: 35px;
