@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
  
   chartOptions: {
     chart: {
-      type: 'line'
+      type: 'bar'
     },
     title: {
       text: 'Sleep log'
@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
     },
     yAxis: {
       title: {
-        text: 'Hours Slept'
+        text: ''
       }
     }
   },
@@ -29,11 +29,15 @@ export default Ember.Controller.extend({
     data: [5, 7, 3, 10, 11, 10, 8]
   },{
     name: 'Bluelight filter',
-    data: [5, 7, 3, 10, 11, 10, 8]
-  },/*{
-	name: 'Quality',
-	data: [7, 8, 5]
-  }*/
+    data: [10, 11, 11, 9, 10, 11, 11]
+  },{
+    name: 'Device inactive',
+    data: [7, 10, 9, 9, 8, 9, 7]
+  },
+  {
+    name: 'Snoring',
+    data: [2, 1, 0, 0, 0, 1, 3]
+  },
   ],
  
 
