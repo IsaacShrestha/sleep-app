@@ -11,6 +11,8 @@ Router.map(function() {
   this.route('alarms');
   this.route('editalarms', {path: ':name'});
   this.route('playalarmsounds');
+  this.route('bedtimes');
+  this.route('filters');
 });
 
 export default Router;

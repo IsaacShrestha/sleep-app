@@ -27,6 +27,9 @@ export default Ember.Controller.extend({
   	//we can use factors to measure sleep quality here instead of just hours slept
     name: 'Quality',
     data: [5, 7, 3, 10, 11, 10, 8]
+  },{
+    name: 'Bluelight filter',
+    data: [5, 7, 3, 10, 11, 10, 8]
   },/*{
 	name: 'Quality',
 	data: [7, 8, 5]
