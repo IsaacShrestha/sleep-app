@@ -10,6 +10,10 @@ export default Ember.Component.extend({
 			this.set('activeBedTime', true);
 		},
 
+		reBedTime(){
+			this.set('activeBedTime', false);
+		},
+
 	},
 
 	
@@ -17,12 +21,14 @@ export default Ember.Component.extend({
 	calculateBedTime: Ember.computed('hours', 'mins', function(){
 		var h = parseInt(this.get('hours'));
 		var m = parseInt(this.get('mins'));
+
 		var reqTime = h - 9;
 		var reqdayTime = 'AM';
 
 		if(reqTime<=0){
 			reqTime = 12+reqTime;
 			reqdayTime = 'PM'
+
 		}
 		else{
 			reqdayTime = 'AM'
