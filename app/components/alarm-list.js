@@ -23,6 +23,7 @@ export default Ember.Component.extend({
 		 		
 		onWakeAlarm() {
 			this.set('wakeupalarm', true);
+			console.log('Testing console log');
 		},
 
 		offWakeAlarm() {
