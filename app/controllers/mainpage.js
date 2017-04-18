@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
     },
     yAxis: {
       title: {
-        text: 'Sleep'
+        text: 'Awake___________Sleep__________Deep Sleep'
       }
     }
   },
