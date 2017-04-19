@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
  
   chartOptions: {
     chart: {
-      type: 'areaspline'
+      type: 'column'
     },
     title: {
       text: 'Sleep log'
@@ -17,8 +17,7 @@ export default Ember.Controller.extend({
       title: {
         text: 'Awake___________Sleep__________Deep Sleep'
       }
-    },
-    
+    }
   },
  
   chartData: [{

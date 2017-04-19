@@ -13,6 +13,8 @@ Router.map(function() {
   this.route('playalarmsounds');
   this.route('bedtimes');
   this.route('filters');
+  this.route('mainpage2');
+  this.route('mainpage3');
 });
 
 export default Router;
