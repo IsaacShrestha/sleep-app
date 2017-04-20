@@ -15,6 +15,8 @@ Router.map(function() {
   this.route('filters');
   this.route('mainpage2');
   this.route('mainpage3');
+  this.route('soundlists');
+  this.route('gamelists');
 });
 
 export default Router;
