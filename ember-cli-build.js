@@ -4,6 +4,12 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+     minifyJS: {
+      enabled: true, //by default its enabled for production
+      options: {
+        "max-line-len": 50000, //you can mention custom value
+      }
+    }    
    
   });
 
@@ -24,3 +30,5 @@ module.exports = function(defaults) {
 
   return app.toTree();
 };
+
+
