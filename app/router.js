@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('mainpage3');
   this.route('soundlists');
   this.route('gamelists');
+  this.route('mathgames');
 });
 
 export default Router;
