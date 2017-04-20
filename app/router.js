@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('mainpage', {path: '/'});
+  this.route('mainpage');
   this.route('alarms');
   this.route('editalarms', {path: ':name'});
   this.route('playalarmsounds');
@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('filters');
   this.route('mainpage2');
   this.route('mainpage3');
+  this.route('mainpage4',{path: '/'});
   this.route('soundlists');
   this.route('gamelists');
   this.route('mathgames');
