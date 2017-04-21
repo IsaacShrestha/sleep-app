@@ -1,6 +1,7 @@
 # sleep-app 
 
 Prototype developed to help middle-school kids get good sleep.
+This prototype is built for screen size 412 X 732 and works best in this size
 
 ## Prerequisites
 
