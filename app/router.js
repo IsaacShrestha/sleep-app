@@ -14,8 +14,8 @@ Router.map(function() {
   this.route('bedtimes');
   this.route('filters');
   this.route('mainpage2');
-  this.route('mainpage3');
-  this.route('mainpage4',{path: '/'});
+  this.route('mainpage3',{path: '/'});
+  this.route('mainpage4');
   this.route('soundlists');
   this.route('gamelists');
   this.route('mathgames');
