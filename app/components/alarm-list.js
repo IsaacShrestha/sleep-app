@@ -17,42 +17,41 @@ export default Ember.Component.extend({
 	selectedDayTime: null,
 	alarmTime: null,
 	alarmType: null,
-	
-	
+
+
 	actions: {
-		 		
+
 		onWakeAlarm() {
 			this.set('wakeupalarm', true);
-			console.log('Testing console log');
 		},
 
 		offWakeAlarm() {
 			this.set('wakeupalarm', false);
 		},
 
-		offBedAlarm(){
-			this.set('bedtimereminder', false );
+		offBedAlarm() {
+			this.set('bedtimereminder', false);
 		},
 
-		onBedAlarm(){
+		onBedAlarm() {
 			this.set('bedtimereminder', true);
 		},
 
-		editWakeup(){
+		editWakeup() {
 			this.set('editwakeupAlarm', true);
 			//this.set('editbedTimeReminder', false);
 			//this.get('router').transitionTo('editalarms', ['wakeup']);
 
 		},
 
-		editBedtime(){
+		editBedtime() {
 			this.set('editbedTimeReminder', true);
 			//this.set('editwakeupAlarm', false);
 			//this.get('router').transitionTo('editalarms', ['bedtime']);
 
 		},
-		
-		selectHour(value){
+
+		selectHour(value) {
 			this.set('hours', value);
 		},
 
@@ -61,76 +60,76 @@ export default Ember.Component.extend({
 
 		},
 
-		dayTime(value){
+		dayTime(value) {
 			this.set('selectedDayTime', value);
 		},
 
-		setAlarm(){
-			var alarm = this.get('hours')+ " : " + this.get('minutes') + "  " + this.get('selectedDayTime');
-			this.set('displayAlarmTime', true ); 
+		setAlarm() {
+			var alarm = this.get('hours') + " : " + this.get('minutes') + "  " + this.get('selectedDayTime');
+			this.set('displayAlarmTime', true);
 			this.set('wakeupalarm', true);
 			this.set('bedtimereminder', true);
-			this.set('alarmTime', alarm ); 
+			this.set('alarmTime', alarm);
 			this.set('alarm', true);
 
 			//calculating alarmtime in milliseconds
-		/*	var hour = Date.parse(this.get('hours'));
-			var mins = Date.parse(this.get('minutes'));*/
+			/*	var hour = Date.parse(this.get('hours'));
+				var mins = Date.parse(this.get('minutes'));*/
 			var hour = this.get('hours');
 			var mins = this.get('minutes');
-			var total1 = hour + (mins/60);
+			var total1 = hour + (mins / 60);
 			var final1 = total1 * 60 * 60 * 1000;
 
 			var d = new Date();
 			var h = d.getHours();
 			var m = d.getMinutes();
-			var total2 = h + (m/60);
+			var total2 = h + (m / 60);
 			var final2 = total2 * 60 * 60 * 1000;
 
 			var diff = final2 - final1;
 
-			Ember.run.later(this,function(){
+			Ember.run.later(this, function () {
 				this.get('router').transitionTo('playalarmsounds');
-			},diff);
-			
+			}, diff);
+
 			//this.get('router').transitionTo('playalarmsounds'); displayAlarmTime
 		},
 
-		setReminder(){
-			var alarm = this.get('hours')+ " : " + this.get('minutes') + "  " + this.get('selectedDayTime');
+		setReminder() {
+			var alarm = this.get('hours') + " : " + this.get('minutes') + "  " + this.get('selectedDayTime');
 			this.set('bedtimereminder', true);
 			this.set('wakeupalarm', true);
-			this.set('displayAlarmTime', true ); 
-			this.set('alarmTime', alarm ); 
+			this.set('displayAlarmTime', true);
+			this.set('alarmTime', alarm);
 			this.set('reminder', true);
 
-			var hour = this.get('hours')+12;
+			var hour = this.get('hours') + 12;
 			var mins = this.get('minutes');
-			var total1 = hour + (mins/60);
+			var total1 = hour + (mins / 60);
 			var final1 = total1 * 60 * 60 * 1000;
 
 			var d = new Date();
 			var h = d.getHours();
 			var m = d.getMinutes();
-			var total2 = h + (m/60);
+			var total2 = h + (m / 60);
 			var final2 = total2 * 60 * 60 * 1000;
 
 			var diff = final1 - final2;
 
 			//alert(diff);
 
-			Ember.run.later(this,function(){
+			Ember.run.later(this, function () {
 				this.get('router').transitionTo('playalarmsounds');
-			},diff);
-			
+			}, diff);
+
 			//this.get('router').transitionTo('alarms');
 		},
 
-		
+
 	},
 
 	//Calculates bed time
-	bedTime: Ember.computed('hours', 'minutes', 'selectedDayTime', function(){
+	bedTime: Ember.computed('hours', 'minutes', 'selectedDayTime', function () {
 		var h = parseInt(this.get('hours'));
 		var m = parseInt(this.get('minutes'));
 		var dayTime = this.get('selectedDayTime');
@@ -138,29 +137,29 @@ export default Ember.Component.extend({
 		var reqdayTime = dayTime;
 		//var t = h + m/60;
 		var reqTime = h - 9;
-		
+
 		var a = 12 + reqTime;
-		if(a >= 12 && dayTime == "AM"){
+		if (a >= 12 && dayTime == "AM") {
 			b = a - 12;
 			reqdayTime = "AM";
 		}
-		
-		else{
+
+		else {
 			b = a;
 			reqdayTime = "PM";
 		}
-		
 
-		
 
-		
+
+
+
 		var reqBedTime = b + " : " + m + "  " + reqdayTime;
 		return reqBedTime;
-		
+
 	}),
 
 	//Calculates wakingup time
-	wakingAlarm: Ember.computed('hours', 'minutes', 'selectedDayTime', function(){
+	wakingAlarm: Ember.computed('hours', 'minutes', 'selectedDayTime', function () {
 		var h = parseInt(this.get('hours'));
 		var m = parseInt(this.get('minutes'));
 		var dayTime = this.get('selectedDayTime');
@@ -169,30 +168,30 @@ export default Ember.Component.extend({
 		var b = null;
 		//var t = h + m/60;
 		var reqTime = h + 9;
-		if(reqTime < 12){
+		if (reqTime < 12) {
 			reqdayTime = dayTime;
-		}else{
+		} else {
 			reqdayTime = "AM";
 		}
 
 
 		var a = reqTime - 12;
-		
-		if(a <= 0){
+
+		if (a <= 0) {
 			b = a + 12;
 		}
-		else{
-			b=a;
+		else {
+			b = a;
 		}
-		
 
-		
+
+
 		var reqWakeTime = b + " : " + m + "  " + reqdayTime;
 		return reqWakeTime;
 
 	}),
 
-	
-	
-	
+
+
+
 });
